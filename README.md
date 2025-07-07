@@ -1,6 +1,6 @@
 # Android Interview Questions
 
-Welcome to the **android-interview-questions** repository! This collection of refined and categorized questions will help you prepare for interviews as an Android Developer.
+Welcome to the **android-interview-questions** repository! This collection of categorized questions will help you prepare for interviews as an Android Developer.
 
 ## Table of Contents
 
